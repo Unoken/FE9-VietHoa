@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patch trên trình duyệt — Fire Emblem: Path of Radiance Việt hóa</title>
+<meta name="description" content="Patch Fire Emblem: Path of Radiance (PAL, ISO hoặc RVZ) sang bản Việt hóa ngay trên trình duyệt. File không rời khỏi máy bạn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.drop { display: block; border: 2px dashed var(--line); border-radius: 12px; padding: 30px 18px; text-align: center;
+  background: var(--card); cursor: pointer; transition: border-color .15s; }
+.drop:hover, .drop.over { border-color: var(--gold); }
+.drop input { display: none; }
+.drop .big { font-size: 18px; font-weight: 700; color: var(--gold2); }
+.drop .small { color: var(--muted); font-size: 14px; margin-top: 4px; }
+#file-name { margin-top: 10px; font-size: 14px; word-break: break-all; }
+#prog { margin: 18px 0; }
+#prog .bar { height: 14px; }
+#prog-txt { font-size: 14px; color: var(--muted); margin-top: 6px; font-variant-numeric: tabular-nums; }
+.note.good { border-left-color: var(--ok); }
+.note.bad { border-left-color: #e06464; }
+#go { margin-top: 6px; font-size: 16px; cursor: pointer; }
+.back { display: inline-block; margin: 18px 0 0; color: var(--muted); text-decoration: none; font-size: 14px; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Bản Việt hóa v0.1 · Unoken</p>
+    <h1>Patch trên trình duyệt</h1>
+    <p class="sub">Chọn ảnh đĩa gốc (ISO hoặc RVZ), nhận ISO tiếng Việt. File của bạn <strong>không tải lên đâu cả</strong>: mọi thứ chạy ngay trên máy.</p>
+  </div>
+</header>
+<main class="wrap">
+  <a class="back" href="../">← Trang chính</a>
+  <section>
+    <h2>Chọn ảnh đĩa gốc</h2>
+    <label class="drop" id="drop">
+      <input type="file" id="pick" accept=".iso,.gcm,.rvz">
+      <div class="big">Bấm để chọn, hoặc kéo thả file ISO / RVZ vào đây</div>
+      <div class="small">Fire Emblem: Path of Radiance bản châu Âu (PAL, GFEP01), dạng ISO (1.459.978.240 byte) hoặc RVZ của Dolphin</div>
+      <div id="file-name"></div>
+    </label>
+    <div id="msg" class="note" hidden></div>
+    <div id="prog" hidden><div class="bar"><i id="prog-bar" style="width:0"></i></div><div id="prog-txt"></div></div>
+    <button id="go" class="btn primary" hidden>Patch và lưu ISO tiếng Việt</button>
+    <p id="mode-note" class="note" hidden>Trình duyệt này không có hộp chọn nơi lưu: ISO mới sẽ được tải xuống như một file thường. Chrome hoặc Edge trên máy tính cho trải nghiệm tốt nhất.</p>
+  </section>
+  <section>
+    <h2>Lưu ý</h2>
+    <ul>
+      <li>Cần khoảng <strong>1,5 GB trống</strong> trên ổ đĩa. Giữ tab mở cho đến khi xong (thường dưới một phút).</li>
+      <li>Nhận <strong>ISO</strong> và <strong>RVZ</strong> (định dạng nén mặc định của Dolphin). Dạng .gcz, .wia, .ciso: đổi sang ISO hoặc RVZ bằng Dolphin (chuột phải vào game → Convert File…). NKit phải khôi phục bằng công cụ NKit.</li>
+      <li>Trang kiểm tra ảnh đĩa gốc (ISO: CRC32 phải là <code>ad6508bd</code>; RVZ: kiểm từng đoạn trong lúc patch) và kiểm tra ISO mới sau khi patch. Kết quả luôn là ISO.</li>
+      <li>Chơi: Dolphin → Config → GameCube → System Language: <strong>English</strong>.</li>
+      <li>Không patch được trên web? Dùng công cụ patch trong <a href="../#huong-dan">phần hướng dẫn</a>.</li>
+    </ul>
+  </section>
+</main>
+<footer><div class="wrap">Bản Việt hóa Fire Emblem: Path of Radiance · Unoken · v0.1</div></footer>
+<script>window.PATCH = {"file": "FE9-VietHoa-Unoken-v0.1.xdelta", "version": "v0.1", "outName": "FE9-VietHoa-Unoken-v0.1.iso", "outSize": 1459978240, "outCrc32": 3921549640, "srcSize": 1459978240, "srcCrc32": 2909079741, "gameId": "GFEP01"};</script>
+<script src="patcher.js"></script>
+</body>
+</html>

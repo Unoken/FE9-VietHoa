@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fire Emblem: Path of Radiance — Bản Việt hóa</title>
+<meta name="description" content="Bản Việt hóa do người hâm mộ thực hiện cho Fire Emblem: Path of Radiance (GameCube, bản PAL châu Âu). Patch ngay trên trình duyệt hoặc file patch xdelta, hướng dẫn, tiến độ dịch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Bản Việt hóa của người hâm mộ · GameCube</p>
+    <h1>Fire Emblem: Path of Radiance</h1>
+    <p class="sub">Việt hóa bởi <span class="by">Unoken</span></p>
+    <p class="meta">Phiên bản hiện tại: <strong>v0.1</strong> · cập nhật 15/10/2026 · bản PAL châu Âu (GFEP01)</p>
+    <div class="btns">
+      <a class="btn primary" href="patch/">Patch ngay trên trình duyệt</a>
+      <a class="btn" href="https://github.com/Unoken/FE9-VietHoa/releases/latest">Tải patch</a>
+      <a class="btn" href="#huong-dan">Hướng dẫn patch</a>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#gioi-thieu">Giới thiệu</a><a href="#tien-do">Tiến độ</a><a href="#anh">Hình ảnh</a>
+  <a href="#huong-dan">Hướng dẫn patch</a><a href="#thay-doi">Thay đổi</a><a href="#bao-loi">Báo lỗi</a>
+  <a href="#cam-on">Thực hiện & cảm ơn</a><a href="#mien-tru">Miễn trừ</a>
+</div></nav>
+
+<main class="wrap">
+<section id="gioi-thieu">
+  <h2>Giới thiệu</h2>
+  <p><em>Fire Emblem: Path of Radiance</em> (2005) là game chiến thuật theo lượt trên GameCube, kể về Ike, chàng lính đánh thuê trẻ bị cuốn vào cuộc chiến của cả lục địa Tellius. Dự án này chuyển toàn bộ game sang tiếng Việt: lời thoại, menu, và cả chữ vẽ sẵn trong ảnh.</p>
+  <ul>
+    <li><strong>Font tiếng Việt đủ dấu</strong>, ghép từ chính nét chữ của game nên hòa vào giao diện gốc.</li>
+    <li><strong>Chữ trong ảnh được vẽ lại</strong>: tên chương, banner lượt, menu căn cứ, màn hình kết thúc.</li>
+    <li><strong>Xưng hô theo từng cặp nhân vật</strong>, giữ đúng giọng của từng người.</li>
+    <li><strong>Phát hành theo mốc</strong>: mỗi mốc một bản phát hành, không phải chờ dịch xong cả game.</li>
+  </ul>
+  <div class="note">Gói tải về <strong>chỉ có file patch</strong> (.xdelta), không chứa game. Bạn cần tự có ảnh đĩa của mình, đúng bản <strong>châu Âu (PAL)</strong>.</div>
+</section>
+
+<section id="tien-do">
+  <h2>Tiến độ</h2>
+  <div class="card progress">
+    <div class="prow"><span class="lbl">Tổng</span><div class="bar"><i style="width:20.3%"></i></div><span class="pct">20%</span><span class="det">14/69 phần việc trong kế hoạch</span></div>
+    <div class="prow"><span class="lbl">Lời</span><div class="bar"><i style="width:42.0%"></i></div><span class="pct">42%</span><span class="det">2.294/5.465 mục thoại và menu</span></div>
+    <div class="prow"><span class="lbl">Ảnh</span><div class="bar"><i style="width:100.0%"></i></div><span class="pct">100%</span><span class="det">307/307 vùng chữ trong ảnh</span></div>
+  </div>
+  <ul class="miles">
+    <li><span class="id">v0.1</span><span><strong>Bản xem trước</strong> <span class="desc">· Toàn bộ ảnh và giao diện, Mở đầu – Chương 2</span></span><span class="tag doing">Đang làm · 8/10</span></li>
+    <li><span class="id">v0.2</span><span><strong>Hết phần 1</strong> <span class="desc">· Đến Chương 8: Greil tử trận, Ike thành Thủ lĩnh</span></span><span class="tag">Chưa bắt đầu</span></li>
+    <li><span class="id">v0.3</span><span><strong>Đến Chương 17</strong> <span class="desc">· Gallia, Begnion, rừng Serenes</span></span><span class="tag">Chưa bắt đầu</span></li>
+    <li><span class="id">v0.4</span><span><strong>Trọn cốt truyện</strong> <span class="desc">· Đến hồi kết, phụ đề phim, đoạn kết từng nhân vật</span></span><span class="tag">Chưa bắt đầu</span></li>
+    <li><span class="id">v0.5</span><span><strong>Hội thoại hỗ trợ</strong> <span class="desc">· 69 cặp support</span></span><span class="tag">Chưa bắt đầu</span></li>
+    <li><span class="id">v1.0</span><span><strong>Bản hoàn chỉnh</strong> <span class="desc">· Hướng dẫn chơi, rà soát và chơi thử toàn bộ</span></span><span class="tag">Chưa bắt đầu</span></li>
+  </ul>
+</section>
+
+<section id="anh">
+  <h2>Hình ảnh</h2>
+  <div class="gallery">
+    <figure><img src="assets/screens/ten-chuong.png" alt="Tên chương" loading="lazy"><figcaption>Tên chương</figcaption></figure>
+    <figure><img src="assets/screens/menu-can-cu.png" alt="Menu căn cứ" loading="lazy"><figcaption>Menu căn cứ</figcaption></figure>
+    <figure><img src="assets/screens/that-bai.png" alt="Màn hình Thất bại" loading="lazy"><figcaption>Màn hình Thất bại</figcaption></figure>
+    <figure><img src="assets/screens/con-tiep.png" alt="Còn tiếp" loading="lazy"><figcaption>Còn tiếp</figcaption></figure>
+  </div>
+</section>
+
+<section id="huong-dan">
+  <h2>Hướng dẫn patch</h2>
+  <div class="note"><strong>Cách nhanh nhất:</strong> <a href="patch/">patch ngay trên trình duyệt</a>. Chọn ảnh đĩa gốc dạng <strong>ISO hoặc RVZ</strong> là xong, file không tải lên đâu cả (tốt nhất với Chrome hoặc Edge trên máy tính). Các bước dưới đây dành cho ai muốn dùng công cụ patch riêng.</div>
+  <ol class="steps">
+    <li><strong>Chuẩn bị ảnh đĩa bản châu Âu (PAL, mã GFEP01).</strong> Bản Mỹ và bản Nhật không dùng được.</li>
+    <li><strong>Đổi sang ISO</strong> nếu ảnh đĩa đang là .rvz, .gcz, .wia hoặc .ciso (vá trên trình duyệt nhận luôn .rvz, bỏ qua bước này): trong <a href="https://dolphin-emu.org">Dolphin</a>, chuột phải vào game → <em>Convert File…</em> → Format: <em>ISO</em> → <em>Convert</em>.
+      Ảnh NKit (.nkit.iso, .nkit.gcz) phải khôi phục bằng công cụ NKit trước, vì Dolphin không đưa NKit về đúng bản gốc được.</li>
+    <li><strong>Kiểm tra ảnh đĩa</strong> đúng bản gốc (bảng dưới). Cách nhanh nhất: Dolphin → chuột phải vào game → <em>Properties</em> → <em>Verify</em> → <em>Verify Integrity</em>.</li>
+    <li><strong>Patch</strong> <a href="patch/">trên trình duyệt</a>, hoặc bằng một trong các công cụ bên dưới với file <code>.xdelta</code> trong gói tải về.</li>
+    <li><strong>Đặt ngôn ngữ máy là tiếng Anh</strong>: Dolphin → <em>Config</em> → <em>GameCube</em> → <em>System Language: English</em>. Bản PAL chọn ngôn ngữ theo máy, và bản Việt hóa thay vào phần tiếng Anh.</li>
+    <li>Mở file ISO đã patch bằng Dolphin.</li>
+  </ol>
+
+  <h3>ISO gốc cần có</h3>
+  <table class="hash">
+    <tr><td>Kích thước</td><td><code>1.459.978.240</code> byte</td></tr>
+    <tr><td>CRC32</td><td><code>ad6508bd</code></td></tr>
+    <tr><td>MD5</td><td><code>0bf72c4840de405ee5ca1b8e3bff56aa</code></td></tr>
+    <tr><td>SHA-1</td><td><code>fa37e09f5cc124602edabbf54f77162d0f3f31f0</code></td></tr>
+  </table>
+  <p>Hash của ISO <em>sau khi patch</em> ghi trong file <code>HUONG_DAN.txt</code> đi kèm từng bản phát hành.</p>
+  <details><summary>Kiểm tra hash bằng dòng lệnh</summary>
+    <p>Windows (PowerShell):</p><pre>Get-FileHash -Algorithm SHA1 "game.iso"</pre>
+    <p>macOS:</p><pre>shasum -a 1 game.iso</pre>
+    <p>Linux:</p><pre>sha1sum game.iso</pre>
+  </details>
+
+  <h3>Công cụ patch</h3>
+  <details open><summary>Windows</summary>
+    <p><strong>Delta Patcher</strong> hoặc <strong>xdelta UI</strong>: chọn ISO gốc làm file nguồn (Original/Source), file <code>.xdelta</code> làm file patch (Patch), rồi bấm Apply. Delta Patcher ghi đè lên chính file ISO, nên hãy giữ một bản sao ISO gốc.</p>
+  </details>
+  <details><summary>macOS / Linux</summary>
+    <p>Dùng <strong>Delta Patcher</strong> (có giao diện), hoặc dòng lệnh <code>xdelta3</code> (macOS: <code>brew install xdelta</code>; Linux: <code>sudo apt install xdelta3</code>):</p>
+    <pre>xdelta3 -d -s "ISO gốc.iso" FE9-VietHoa-Unoken-v0.1.xdelta FE9-VietHoa-Unoken-v0.1.iso</pre>
+  </details>
+  <details><summary>Android</summary>
+    <p>Dùng <strong>UniPatcher</strong>: chọn file patch <code>.xdelta</code> và file ISO gốc, rồi bấm patch. Sau đó mở bằng Dolphin cho Android.</p>
+  </details>
+</section>
+
+<section id="thay-doi" class="changelog">
+  <h2>Thay đổi</h2>
+  <h3>v0.1 — Bản xem trước (15/10/2026)</h3>
+  <h4>Đã Việt hóa</h4>
+  <ul>
+    <li>Mở đầu, Chương 1, Chương 2: toàn bộ lời thoại.</li>
+    <li>Toàn bộ chữ vẽ trong ảnh: tên chương, banner lượt (LƯỢT TA / LƯỢT ĐỊCH…), Lên cấp!, Thăng chức!, màn hình trước trận, căn cứ, thông tin đơn vị, menu hệ thống, lời bài hát kết thúc, Chiến tích, Thất bại, Còn tiếp.</li>
+    <li>Khoảng 80% menu, vật phẩm, kỹ năng, class và phần trợ giúp.</li>
+    <li>Font tiếng Việt đủ dấu, ghép từ nét chữ gốc của game.</li>
+  </ul>
+  <h4>Cách patch</h4>
+  <ul>
+    <li>Patch ngay trên trình duyệt: chọn ảnh đĩa gốc dạng ISO hoặc RVZ, nhận ISO tiếng Việt; file không tải lên đâu cả.</li>
+    <li>Hoặc dùng file patch <code>.xdelta</code> với công cụ patch quen thuộc (xem <code>HUONG_DAN.txt</code>).</li>
+    <li>Nhớ đặt ngôn ngữ máy (Dolphin: Config → GameCube → System Language) là <strong>English</strong>.</li>
+  </ul>
+  <h4>Còn tiếng Anh</h4>
+  <ul>
+    <li>Lời thoại từ Chương 3 trở đi, hội thoại hỗ trợ, hướng dẫn chơi, phụ đề phim, đoạn kết.</li>
+  </ul>
+  <h4>Đã biết</h4>
+  <ul>
+    <li>Một vài nhãn chỉ số dài hơn bản gốc nên chạm sát con số bên cạnh (ví dụ &quot;Trúng&quot; trong khung trợ giúp vũ khí).</li>
+  </ul>
+</section>
+
+<section id="bao-loi">
+  <h2>Báo lỗi</h2>
+  <p>Gặp chữ tràn khung, lỗi chính tả, dịch sai hay game bị treo? Hãy mở một <a href="https://github.com/Unoken/FE9-VietHoa/issues">issue trên GitHub</a>, ghi rõ:</p>
+  <ul>
+    <li>phiên bản đang dùng (hiện trong phần mô tả game ở Dolphin),</li>
+    <li>chương, cảnh, câu thoại hoặc màn hình bị lỗi,</li>
+    <li>ảnh chụp màn hình nếu được; nếu game treo: thông báo lỗi của Dolphin, và đang làm gì lúc đó.</li>
+  </ul>
+</section>
+
+<section id="cam-on">
+  <h2>Thực hiện & cảm ơn</h2>
+  <dl class="credits">
+    <dt>Thực hiện: Unoken</dt><dd>Dịch thuật, công cụ, font tiếng Việt, chữ trong ảnh, đóng gói, trình patch trên web.</dd>
+    <dt>Cảm ơn: font chữ trong ảnh</dt><dd>Newsreader, Arsenal, Philosopher, Grenze Gotisch, M PLUS 1p: dùng theo giấy phép <a href="https://openfontlicense.org">SIL Open Font License 1.1</a>. Font trong lời thoại ghép từ nét chữ gốc của game.</dd>
+    <dt>Cảm ơn: công cụ</dt><dd>Dolphin (trình giả lập, tài liệu định dạng RVZ), xdelta3 (định dạng patch VCDIFF), fzstd (giải nén zstd trong trình patch trên web, giấy phép MIT).</dd>
+  </dl>
+</section>
+
+<section id="mien-tru">
+  <h2>Miễn trừ trách nhiệm</h2>
+  <p>Đây là dự án phi lợi nhuận của người hâm mộ, không liên quan, không được tài trợ hay chấp thuận bởi Nintendo hay Intelligent Systems. <em>Fire Emblem</em> và mọi nhân vật, hình ảnh liên quan là tài sản của chủ sở hữu tương ứng. Dự án không phân phối game hay dữ liệu đĩa gốc; patch chỉ dùng được với bản game mà bạn sở hữu hợp pháp. Bạn tự chịu trách nhiệm khi sử dụng.</p>
+</section>
+</main>
+
+<footer><div class="wrap">
+  Bản Việt hóa Fire Emblem: Path of Radiance · Unoken · v0.1 · <a href="https://github.com/Unoken/FE9-VietHoa">Mã nguồn trang và bản phát hành</a>
+</div></footer>
+</body>
+</html>
