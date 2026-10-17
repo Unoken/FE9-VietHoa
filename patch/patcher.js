@@ -12,6 +12,11 @@
   function fmt(n) { return n.toLocaleString("vi-VN"); }
   function hex(n) { return (n >>> 0).toString(16).padStart(8, "0"); }
   function show(id, on) { $(id).hidden = !on; }
+  // Đếm sự kiện ẩn danh bằng GoatCounter (nếu trang có gắn; chặn quảng cáo thì bỏ qua)
+  function track(name) {
+    try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name + "-" + P.version, event: true }); }
+    catch (e) {}
+  }
   function say(html, kind) {
     var el = $("msg");
     el.className = "note " + (kind || "");
@@ -54,20 +59,26 @@
         busy = false;
         show("prog", false);
         if (m.ok && m.kind === "rvz") {
+          track("rvz-dung");
           say("<strong>File RVZ đúng game</strong> (" + m.gameId + ", bản châu Âu). Dữ liệu sẽ được kiểm tra trong lúc patch. Bấm nút bên dưới để patch.", "good");
           show("go", true);
         } else if (m.ok) {
+          track("iso-dung");
           say("<strong>ISO gốc đúng bản.</strong> CRC32 " + hex(m.crc32) + " khớp bản chuẩn Redump. Bấm nút bên dưới để patch.", "good");
           show("go", true);
         } else if (m.reason === "format") {
+          track("sai-dinh-dang");
           say("<strong>Định dạng chưa hỗ trợ.</strong> " + FORMAT_HINT[m.kind] +
               " Trang nhận ISO hoặc RVZ; hãy đổi bằng Dolphin (chuột phải vào game → Convert File… → ISO hoặc RVZ).", "bad");
         } else if (m.reason === "game") {
+          track("sai-game-" + m.gameId);
           say("<strong>Không đúng game hoặc không đúng bản.</strong> File này là " + m.gameId +
               (GAME_HINT[m.gameId] ? " (" + GAME_HINT[m.gameId] + ")" : "") + "; patch này cần " + P.gameId + " (bản châu Âu).", "bad");
         } else if (m.reason === "size") {
+          track("sai-kich-thuoc");
           say("<strong>Ảnh đĩa không đủ kích thước gốc</strong> (cần " + fmt(P.srcSize) + " byte). Có thể đã bị cắt gọn (NKit, scrub); hãy dùng bản trích đầy đủ.", "bad");
         } else {
+          track("sai-crc");
           say("<strong>ISO không đúng bản gốc</strong> (CRC32 " + hex(m.crc32) + ", cần " + hex(P.srcCrc32) + "). " +
               "Có thể ISO đã bị sửa hoặc trích lỗi. Xem phần hướng dẫn ở trang chính.", "bad");
         }
@@ -168,16 +179,19 @@
         busy = false;
         if (m.size !== P.outSize || m.crc32 !== P.outCrc32) {
           sink.abort();
+          track("patch-khong-khop");
           say("<strong>ISO patch ra không khớp</strong> (CRC32 " + hex(m.crc32) + ", cần " + hex(P.outCrc32) + "). Đừng dùng file này; hãy báo lỗi.", "bad");
           return;
         }
         await sink.close();
         show("prog", false);
+        track("patch-xong");
         say("<strong>Xong!</strong> Đã tạo <code>" + P.outName + "</code> (CRC32 " + hex(m.crc32) + ", đúng bản Việt hóa " +
             P.version + "). Nhớ đặt ngôn ngữ máy trong Dolphin là <strong>English</strong> trước khi chơi.", "good");
       } else if (m.type === "error" && !failed) {
         busy = false;
         sink.abort();
+        track("patch-loi");
         say("<strong>Lỗi khi patch:</strong> " + m.message +
             (/adler32/.test(m.message) ? ". File gốc có dữ liệu khác bản chuẩn (trích lỗi hoặc đã bị sửa)." : ""), "bad");
       }
