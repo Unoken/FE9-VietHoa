@@ -93,7 +93,16 @@
       suggestedName: P.outName,
       types: [{ description: "Ảnh đĩa ISO", accept: { "application/octet-stream": [".iso"] } }]
     });
-    var w = await handle.createWritable();
+    var w;
+    try {
+      w = await handle.createWritable();
+    } catch (e) {
+      // Có trình duyệt mở được hộp chọn nhưng không cho ghi (Chrome Android, Brave, thư mục bị hạn chế…):
+      // dọn file rỗng vừa tạo rồi để openSink chuyển sang cách tải xuống.
+      try { if (handle.remove) await handle.remove(); } catch (_) { /* bỏ qua */ }
+      e.noWrite = true;
+      throw e;
+    }
     return { kind: "file", write: function (c) { return w.write(c); }, close: function () { return w.close(); },
              abort: function () { return w.abort(); } };
   }
@@ -145,7 +154,10 @@
   }
 
   async function openSink() {
-    if (window.showSaveFilePicker) return sinkFile();      // gọi ngay trong lượt bấm nút (cần cử chỉ người dùng)
+    if (window.showSaveFilePicker) {                       // gọi ngay trong lượt bấm nút (cần cử chỉ người dùng)
+      try { return await sinkFile(); }
+      catch (e) { if (!e.noWrite) throw e; }               // không ghi được vào file đã chọn: thử cách khác
+    }
     if ("serviceWorker" in navigator && window.isSecureContext) {
       try { return await sinkServiceWorker(); } catch (e) { /* thử cách cuối */ }
     }
