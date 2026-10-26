@@ -28,6 +28,7 @@
 </head>
 <body>
 <header class="hero">
+  <button type="button" class="cafe-btn" data-open="moi-cafe"><span class="cup" aria-hidden="true">☕</span> Mời Unoken 1 ly cafe</button>
   <div class="wrap">
     <p class="kicker">Bản Việt hóa v1.0 · Unoken</p>
     <h1>Patch trên trình duyệt</h1>
@@ -63,6 +64,30 @@
   </section>
 </main>
 <footer><div class="wrap">Bản Việt hóa Fire Emblem: Path of Radiance · Unoken · v1.0</div></footer>
+<dialog id="moi-cafe" class="cafe" aria-labelledby="moi-cafe-h">
+  <button type="button" class="close" aria-label="Đóng">×</button>
+  <h2 id="moi-cafe-h">Mời cafe</h2>
+  <p>Bản Việt hóa luôn miễn phí và sẽ luôn miễn phí. Nếu bạn thấy vui khi chơi và muốn mời mình một ly cafe, mình sẵn lòng nhận, feel free nhé. Các bạn chơi hết game, báo lỗi giúp, giới thiệu cho bạn bè đã là quý lắm rồi.</p>
+  <div class="donate">
+    <img class="qr" src="../assets/donate-qr.png" alt="Mã QR chuyển khoản">
+    <dl>
+      <dt>Ngân hàng</dt><dd>Techcombank</dd>
+      <dt>Số tài khoản</dt><dd><code>19032525499014</code> <button type="button" class="copy" data-copy="19032525499014">Chép</button></dd>
+      <dt>Chủ tài khoản</dt><dd>LUU QUANG DUC</dd>
+      <dt>Nội dung</dt><dd>Moi cafe FE9</dd>
+    </dl>
+  </div>
+</dialog>
+<script>(() => {
+  const dlg = document.getElementById("moi-cafe");
+  document.querySelectorAll("[data-open=moi-cafe]").forEach(b => b.addEventListener("click", () => dlg.showModal()));
+  dlg.querySelector(".close").addEventListener("click", () => dlg.close());
+  dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+  dlg.querySelectorAll("button.copy").forEach(b => b.addEventListener("click", () => {
+    navigator.clipboard.writeText(b.dataset.copy).then(() => { b.textContent = "Đã chép"; setTimeout(() => b.textContent = "Chép", 1500); });
+  }));
+  if (location.hash === "#moi-cafe") dlg.showModal();
+})();</script>
 <script>window.PATCH = {"file": "FE9-VietHoa-Unoken-v1.0.xdelta", "version": "v1.0", "outName": "FE9-VietHoa-Unoken-v1.0.iso", "outSize": 1459978240, "outCrc32": 2939864064, "srcSize": 1459978240, "srcCrc32": 2909079741, "gameId": "GFEP01"};</script>
 <script src="patcher.js"></script>
 <script data-goatcounter="https://unoken.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

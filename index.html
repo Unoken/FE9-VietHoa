@@ -12,11 +12,12 @@
 </head>
 <body>
 <header class="hero">
+  <button type="button" class="cafe-btn" data-open="moi-cafe"><span class="cup" aria-hidden="true">☕</span> Mời Unoken 1 ly cafe</button>
   <div class="wrap">
     <p class="kicker">Bản Việt hóa của người hâm mộ · GameCube</p>
     <h1>Fire Emblem: Path of Radiance</h1>
     <p class="sub">Việt hóa bởi <span class="by">Unoken</span></p>
-    <p class="meta">Phiên bản hiện tại: <strong>v1.0</strong> · cập nhật 25/10/2026 · bản PAL châu Âu (GFEP01)</p>
+    <p class="meta">Phiên bản hiện tại: <strong>v1.0</strong> · cập nhật 26/10/2026 · bản PAL châu Âu (GFEP01)</p>
     <div class="btns">
       <a class="btn primary" href="patch/">Patch ngay trên trình duyệt</a>
       <a class="btn" href="https://github.com/Unoken/FE9-VietHoa/releases/latest">Tải patch</a>
@@ -251,6 +252,30 @@
 <footer><div class="wrap">
   Bản Việt hóa Fire Emblem: Path of Radiance · Unoken · v1.0 · <a href="https://github.com/Unoken/FE9-VietHoa">Mã nguồn trang và bản phát hành</a>
 </div></footer>
+<dialog id="moi-cafe" class="cafe" aria-labelledby="moi-cafe-h">
+  <button type="button" class="close" aria-label="Đóng">×</button>
+  <h2 id="moi-cafe-h">Mời cafe</h2>
+  <p>Bản Việt hóa luôn miễn phí và sẽ luôn miễn phí. Nếu bạn thấy vui khi chơi và muốn mời mình một ly cafe, mình sẵn lòng nhận, feel free nhé. Các bạn chơi hết game, báo lỗi giúp, giới thiệu cho bạn bè đã là quý lắm rồi.</p>
+  <div class="donate">
+    <img class="qr" src="assets/donate-qr.png" alt="Mã QR chuyển khoản">
+    <dl>
+      <dt>Ngân hàng</dt><dd>Techcombank</dd>
+      <dt>Số tài khoản</dt><dd><code>19032525499014</code> <button type="button" class="copy" data-copy="19032525499014">Chép</button></dd>
+      <dt>Chủ tài khoản</dt><dd>LUU QUANG DUC</dd>
+      <dt>Nội dung</dt><dd>Moi cafe FE9</dd>
+    </dl>
+  </div>
+</dialog>
+<script>(() => {
+  const dlg = document.getElementById("moi-cafe");
+  document.querySelectorAll("[data-open=moi-cafe]").forEach(b => b.addEventListener("click", () => dlg.showModal()));
+  dlg.querySelector(".close").addEventListener("click", () => dlg.close());
+  dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+  dlg.querySelectorAll("button.copy").forEach(b => b.addEventListener("click", () => {
+    navigator.clipboard.writeText(b.dataset.copy).then(() => { b.textContent = "Đã chép"; setTimeout(() => b.textContent = "Chép", 1500); });
+  }));
+  if (location.hash === "#moi-cafe") dlg.showModal();
+})();</script>
 <script data-goatcounter="https://unoken.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
