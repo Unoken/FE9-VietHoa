@@ -22,10 +22,11 @@ a { color: var(--accent); }
 .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
 header.hero {
   background: radial-gradient(1200px 400px at 50% -80px, rgba(217,180,90,.18), transparent 70%), var(--bg2);
-  border-bottom: 1px solid var(--line); padding: 56px 0 40px; text-align: center; position: relative;
+  border-bottom: 1px solid var(--line); padding: 56px 0 40px; text-align: center;
 }
+.cafe-row { margin: 22px 0 0; }
 .cafe-btn {
-  position: absolute; top: 14px; right: 16px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
+  font: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
   padding: 6px 14px; border-radius: 99px; border: 0; color: #1a1406;
   background: linear-gradient(135deg, #f0d68f, #d9b45a 55%, #c4922f);
   box-shadow: 0 4px 14px rgba(0, 0, 0, .35); transition: transform .15s;
@@ -34,11 +35,6 @@ header.hero {
 .cafe-btn .cup { display: inline-block; font-size: 15px; animation: cafe-tilt 2.6s ease-in-out infinite; }
 @keyframes cafe-tilt { 0%, 80%, 100% { transform: rotate(0); } 86% { transform: rotate(-14deg); } 93% { transform: rotate(10deg); } }
 @media (prefers-reduced-motion: reduce) { .cafe-btn .cup { animation: none; } }
-@media (max-width: 560px) {
-  header.hero { padding-top: 64px; }
-  .cafe-btn { font-size: 13px; padding: 6px 12px; right: 50%; transform: translateX(50%); }
-  .cafe-btn:hover { transform: translateX(50%) scale(1.04); }
-}
 .hero .kicker { color: var(--muted); letter-spacing: .14em; text-transform: uppercase; font-size: 13px; margin: 0; }
 .hero h1 {
   font-family: "Newsreader", Georgia, serif; font-weight: 700; color: var(--gold2);
